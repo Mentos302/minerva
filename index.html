@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
+    <header
+      class="py-4 px-6 border-b border-primary-grey sm:border-0 sm:py-6 sm:px-8 flex items-center justify-between"
+    >
+      <a href="/">
+        <img
+          src="img/logo.png"
+          class="w-[140px] sm:w-[180px]"
+          alt="Minerva Global"
+        />
+      </a>
+      <nav class="hidden relative sm:block">
+        <span
+          class="block: sm:hidden uppercase absolute top-[75px] text-3xl font-thin tracking-wider"
+          >Menu</span
+        >
+        <ul
+          class="text-lg sm:text-xs flex flex-col text-center sm:flex-row sm:gap-10 font-semibold uppercase burger-nav"
+        >
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">Strategy</a></li>
+          <li><a href="#">Team</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="block sm:hidden z-50" id="burger">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          class="w-10 h-10"
+          id="burget-open-icon"
+        >
+          <path
+            fill="#C7C7C7"
+            d="M4 7h16c.55 0 1 .15 1 .35s-.45 .35-1 .35H4c-.55 0-1-.15-1-.35s.45-.35 1-.35zm0 5h16c.55 0 1 .15 1 .35s-.45 .35-1 .35H4c-.55 0-1-.15-1-.35s.45-.35 1-.35zm0 5h16c.55 0 1 .15 1 .35s-.45 .35-1 .35H4c-.55 0-1-.15-1-.35s.45-.35 1-.35z"
+          />
+        </svg>
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-10 h-10 hidden"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="#C7C7C7"
+          stroke-width="1"
+          id="burget-close-icon"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
+    </header>
+    <main>
+      <div
+        class="h-full mb-6 sm:m-0 flex flex-col sm:flex-row items-center justify-center"
+      >
+        <lottie-player
+          src="./lootie/home-animation.json"
+          class="w-full h-full m-[-25px] mr-0 sm:w-[420px] sm:h-[420px]"
+          autoplay
+        ></lottie-player>
+        <div
+          class="px-8 text-xl sm:p-0 sm:w-[450px] sm:text-lg font-extralight right-fade-in"
+        >
+          <p class="mb-6">
+            <b class="font-semibold">Minerva Genesis Fund</b>
+            is a multi-strategy fund providing key investors managed access to
+            global digital assets aiming to outperform traditional markets.
+          </p>
+          <p>
+            The Fund utilises proprietary indicators for swing trading, custom
+            algorithms for medium frequency scalping and access to early-stage
+            DeFi investments.
+          </p>
+        </div>
+      </div>
+    </main>
+    <footer
+      class="p-8 text-[6px] sm:p-0 sm:text-xs flex flex-col sm:gap-[6px] justify-start text-center"
+    >
+      <b class="uppercase">Disclaimer</b>
+      <i class="font-extralight sm:font-normal"
+        >©Minerva Capital Management Pty Ltd 2024 All rights reserved.</i
+      >
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+  </body>
+</html>

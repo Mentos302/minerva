@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/*
+  Based on TailwindCSS recommendations,
+  consider using classes instead of the `@apply` directive
+  @see https://tailwindcss.com/docs/reusing-styles#avoiding-premature-abstraction
+*/
+
+body {
+  @apply bg-primary-black text-primary-white text-xs;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+html.overflow-hidden {
+  overflow: hidden;
+}
+
+.burger-active {
+  @apply bg-mobile-accent fixed top-0 left-0 w-full h-full z-50 flex flex-col items-center justify-center;
+  animation-name: slideIn;
+  animation-duration: 0.5s;
+  animation-timing-function: ease;
+}
+
+.burger-active + body {
+  overflow: hidden;
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 767px) and (min-height: 600px) {
+  body {
+    max-height: 100vh;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 100px 1fr 60px;
+  }
+
+  main {
+    height: calc(100vh - 160px);
+    max-height: 100%;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 600px) {
+  .burger-nav {
+    width: 90%;
+  }
+  .burger-nav li {
+    padding: 20px 0;
+    border-bottom: 0.5px solid rgba(256, 256, 256, 0.4);
+  }
+  .burger-nav li:last-child {
+    border: 0;
+  }
+}
+
+.right-fade-in {
+  opacity: 0;
+  transform: translateX(20px);
+  animation: fadeInRight 3s ease forwards;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
